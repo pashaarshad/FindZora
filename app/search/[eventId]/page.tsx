@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/link";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ShieldCheck, ArrowLeft, Lock, Sparkles, AlertCircle, RefreshCw } from "lucide-react";
 import ConsentModal from "@/components/ConsentModal";

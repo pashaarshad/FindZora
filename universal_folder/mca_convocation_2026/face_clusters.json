@@ -1,0 +1,445 @@
+{
+  "event_folder": "mca_convocation_2026",
+  "last_updated": "2026-11-22T14:20:56Z",
+  "processed_files": {
+    "WIN_20260225_13_31_11_Pro.jpg": {
+      "faces_detected": 1,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [
+            515,
+            219,
+            212,
+            212
+          ],
+          "landmarks": {
+            "left_eye": [
+              578.6,
+              293.2
+            ],
+            "right_eye": [
+              663.4,
+              293.2
+            ],
+            "nose_tip": [
+              621.0,
+              335.6
+            ],
+            "mouth_left": [
+              589.2,
+              378.0
+            ],
+            "mouth_right": [
+              652.8,
+              378.0
+            ],
+            "chin_center": [
+              621.0,
+              420.4
+            ]
+          },
+          "quality_score": 0.738
+        }
+      ]
+    },
+    "WIN_20260225_13_31_15_Pro.jpg": {
+      "faces_detected": 2,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [
+            869,
+            292,
+            227,
+            227
+          ],
+          "landmarks": {
+            "left_eye": [
+              937.1,
+              371.4
+            ],
+            "right_eye": [
+              1027.9,
+              371.4
+            ],
+            "nose_tip": [
+              982.5,
+              416.9
+            ],
+            "mouth_left": [
+              948.5,
+              462.2
+            ],
+            "mouth_right": [
+              1016.5,
+              462.2
+            ],
+            "chin_center": [
+              982.5,
+              507.6
+            ]
+          },
+          "quality_score": 0.767
+        },
+        {
+          "person_id": "101",
+          "bbox": [
+            560,
+            234,
+            209,
+            209
+          ],
+          "landmarks": {
+            "left_eye": [
+              622.7,
+              307.1
+            ],
+            "right_eye": [
+              706.3,
+              307.1
+            ],
+            "nose_tip": [
+              664.5,
+              348.9
+            ],
+            "mouth_left": [
+              633.1,
+              390.8
+            ],
+            "mouth_right": [
+              695.9,
+              390.8
+            ],
+            "chin_center": [
+              664.5,
+              432.5
+            ]
+          },
+          "quality_score": 0.81
+        }
+      ]
+    },
+    "WIN_20260225_13_31_17_Pro.jpg": {
+      "faces_detected": 2,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [
+            559,
+            231,
+            217,
+            217
+          ],
+          "landmarks": {
+            "left_eye": [
+              624.1,
+              306.9
+            ],
+            "right_eye": [
+              710.9,
+              306.9
+            ],
+            "nose_tip": [
+              667.5,
+              350.4
+            ],
+            "mouth_left": [
+              635.0,
+              393.8
+            ],
+            "mouth_right": [
+              700.0,
+              393.8
+            ],
+            "chin_center": [
+              667.5,
+              437.1
+            ]
+          },
+          "quality_score": 1.0
+        },
+        {
+          "person_id": "101",
+          "bbox": [
+            881,
+            299,
+            227,
+            227
+          ],
+          "landmarks": {
+            "left_eye": [
+              949.1,
+              378.4
+            ],
+            "right_eye": [
+              1039.9,
+              378.4
+            ],
+            "nose_tip": [
+              994.5,
+              423.9
+            ],
+            "mouth_left": [
+              960.5,
+              469.2
+            ],
+            "mouth_right": [
+              1028.5,
+              469.2
+            ],
+            "chin_center": [
+              994.5,
+              514.6
+            ]
+          },
+          "quality_score": 0.838
+        }
+      ]
+    },
+    "WIN_20260225_13_31_25_Pro.jpg": {
+      "faces_detected": 2,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [
+            705,
+            191,
+            217,
+            217
+          ],
+          "landmarks": {
+            "left_eye": [
+              770.1,
+              266.9
+            ],
+            "right_eye": [
+              856.9,
+              266.9
+            ],
+            "nose_tip": [
+              813.5,
+              310.4
+            ],
+            "mouth_left": [
+              781.0,
+              353.8
+            ],
+            "mouth_right": [
+              846.0,
+              353.8
+            ],
+            "chin_center": [
+              813.5,
+              397.1
+            ]
+          },
+          "quality_score": 0.944
+        },
+        {
+          "person_id": "101",
+          "bbox": [
+            492,
+            212,
+            203,
+            203
+          ],
+          "landmarks": {
+            "left_eye": [
+              552.9,
+              283.1
+            ],
+            "right_eye": [
+              634.1,
+              283.1
+            ],
+            "nose_tip": [
+              593.5,
+              323.6
+            ],
+            "mouth_left": [
+              563.0,
+              364.2
+            ],
+            "mouth_right": [
+              624.0,
+              364.2
+            ],
+            "chin_center": [
+              593.5,
+              404.9
+            ]
+          },
+          "quality_score": 0.97
+        }
+      ]
+    },
+    "WIN_20260225_13_31_26_Pro.jpg": {
+      "faces_detected": 2,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [
+            492,
+            211,
+            206,
+            206
+          ],
+          "landmarks": {
+            "left_eye": [
+              553.8,
+              283.1
+            ],
+            "right_eye": [
+              636.2,
+              283.1
+            ],
+            "nose_tip": [
+              595.0,
+              324.3
+            ],
+            "mouth_left": [
+              564.1,
+              365.5
+            ],
+            "mouth_right": [
+              625.9,
+              365.5
+            ],
+            "chin_center": [
+              595.0,
+              406.7
+            ]
+          },
+          "quality_score": 0.796
+        },
+        {
+          "person_id": "101",
+          "bbox": [
+            804,
+            213,
+            223,
+            223
+          ],
+          "landmarks": {
+            "left_eye": [
+              870.9,
+              291.1
+            ],
+            "right_eye": [
+              960.1,
+              291.1
+            ],
+            "nose_tip": [
+              915.5,
+              335.6
+            ],
+            "mouth_left": [
+              882.0,
+              380.2
+            ],
+            "mouth_right": [
+              949.0,
+              380.2
+            ],
+            "chin_center": [
+              915.5,
+              424.9
+            ]
+          },
+          "quality_score": 0.708
+        }
+      ]
+    },
+    "WIN_20260225_13_33_41_Pro.jpg": {
+      "faces_detected": 1,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [
+            516,
+            225,
+            204,
+            204
+          ],
+          "landmarks": {
+            "left_eye": [
+              577.2,
+              296.4
+            ],
+            "right_eye": [
+              658.8,
+              296.4
+            ],
+            "nose_tip": [
+              618.0,
+              337.2
+            ],
+            "mouth_left": [
+              587.4,
+              378.0
+            ],
+            "mouth_right": [
+              648.6,
+              378.0
+            ],
+            "chin_center": [
+              618.0,
+              418.8
+            ]
+          },
+          "quality_score": 0.916
+        }
+      ]
+    }
+  },
+  "person_clusters": {
+    "101": {
+      "person_id": "101",
+      "label": "Person_101",
+      "representative_embedding": [
+        0.05965,
+        0.03251,
+        -0.0173,
+        0.05884,
+        -0.05461,
+        0.06901,
+        -0.0038,
+        -0.01264,
+        -0.06427,
+        0.05276,
+        0.04631,
+        0.00069,
+        -0.00644,
+        -0.06643,
+        0.05775,
+        -0.05618,
+        0.00055,
+        0.03619,
+        -0.01319,
+        0.04196,
+        0.00956,
+        0.02981,
+        0.03605,
+        0.06211,
+        0.01861,
+        0.02196,
+        0.0674,
+        0.00124,
+        0.07339,
+        0.05813,
+        0.06456,
+        -0.01601
+      ],
+      "total_photos": 6,
+      "photo_paths": [
+        "WIN_20260225_13_31_11_Pro.jpg",
+        "WIN_20260225_13_31_15_Pro.jpg",
+        "WIN_20260225_13_31_17_Pro.jpg",
+        "WIN_20260225_13_31_25_Pro.jpg",
+        "WIN_20260225_13_31_26_Pro.jpg",
+        "WIN_20260225_13_33_41_Pro.jpg"
+      ]
+    }
+  }
+}
