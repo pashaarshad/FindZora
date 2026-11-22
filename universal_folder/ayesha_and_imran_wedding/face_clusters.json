@@ -1,0 +1,74 @@
+{
+  "event_folder": "ayesha_and_imran_wedding",
+  "last_updated": "2026-11-22T19:35:00Z",
+  "processed_files": {
+    "wedding_stage_01.jpg": {
+      "faces_detected": 2,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [120, 85, 95, 95],
+          "landmarks": {
+            "left_eye": [148.5, 118.2],
+            "right_eye": [186.5, 118.2],
+            "nose_tip": [167.5, 137.2],
+            "mouth_left": [153.2, 156.2],
+            "mouth_right": [181.8, 156.2],
+            "chin_center": [167.5, 175.2]
+          },
+          "quality_score": 0.94
+        },
+        {
+          "person_id": "102",
+          "bbox": [280, 90, 90, 90],
+          "landmarks": {
+            "left_eye": [307.0, 121.5],
+            "right_eye": [343.0, 121.5],
+            "nose_tip": [325.0, 139.5],
+            "mouth_left": [311.5, 157.5],
+            "mouth_right": [338.5, 157.5],
+            "chin_center": [325.0, 175.5]
+          },
+          "quality_score": 0.91
+        }
+      ]
+    },
+    "candid_dinner_04.jpg": {
+      "faces_detected": 1,
+      "faces": [
+        {
+          "person_id": "101",
+          "bbox": [150, 110, 100, 100],
+          "landmarks": {
+            "left_eye": [180.0, 145.0],
+            "right_eye": [220.0, 145.0],
+            "nose_tip": [200.0, 165.0],
+            "mouth_left": [185.0, 185.0],
+            "mouth_right": [215.0, 185.0],
+            "chin_center": [200.0, 205.0]
+          },
+          "quality_score": 0.96
+        }
+      ]
+    }
+  },
+  "person_clusters": {
+    "101": {
+      "person_id": "101",
+      "label": "Person_101 (Arshad)",
+      "total_photos": 2,
+      "photo_paths": [
+        "wedding_stage_01.jpg",
+        "candid_dinner_04.jpg"
+      ]
+    },
+    "102": {
+      "person_id": "102",
+      "label": "Person_102",
+      "total_photos": 1,
+      "photo_paths": [
+        "wedding_stage_01.jpg"
+      ]
+    }
+  }
+}
