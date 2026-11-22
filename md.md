@@ -43,7 +43,7 @@ Based on the official FindZora architectural blueprint:
 
 ### Stage 1: Organizer & Studio Setup (Steps 1 to 5)
 * **Step 1: Organizer / Studio Login:** Verified photographer or event studio credentials authenticate to the platform.
-* **Step 2: Create New Event:** Organizer specifies event name (e.g. *Ayesha & Imran Wedding*), event date, access passcode (optional), and retention period (e.g. 30 days).
+* **Step 2: Create New Event:** Organizer specifies event name (e.g. *Wedding Event 1*), event date, access passcode (optional), and retention period (e.g. 30 days).
 * **Step 3: Event Created & Dashboard:** A dedicated dashboard generates access controls, ingestion channels, and analytics counters.
 * **Step 4: Share Link with Guests:** Organizers distribute unique links or QR codes (e.g. `https://findzora.com/search/[eventId]` or the Universal Search Portal) via WhatsApp or printed event cards.
 * **Step 5: Photo Ingestion:** Photos are uploaded either via the web interface or directly synced into the **Universal Watch Folder**.
@@ -74,7 +74,7 @@ To eliminate the need for photographers to manually upload thousands of photos v
 ### Directory Structure
 ```text
 D:\FindZora\universal_folder/
-├── ayesha_and_imran_wedding/
+├── wedding_event_1/
 │   ├── wedding_stage_01.jpg
 │   ├── candid_dinner_04.jpg
 │   └── face_clusters.json          <-- Auto-generated person index
@@ -96,7 +96,7 @@ D:\FindZora\universal_folder/
 
 ```json
 {
-  "event_folder": "ayesha_and_imran_wedding",
+  "event_folder": "wedding_event_1",
   "last_updated": "2026-11-22T19:35:00Z",
   "person_clusters": {
     "101": {
@@ -146,7 +146,7 @@ When an attendee visits the platform:
 1. They capture **one verification selfie**.
 2. FindZora queries across **all active events** stored on the server.
 3. The response groups matches by event:
-   * **Event 1: Ayesha & Imran Wedding** (4 Photos) → `[Download All Event Photos (ZIP)]`
+   * **Event 1: Wedding Event 1** (4 Photos) → `[Download All Event Photos (ZIP)]`
    * **Event 2: MCA Convocation 2026** (6 Photos) → `[Download All Event Photos (ZIP)]`
 4. Individual photo taps open a high-resolution lightbox with:
    * Single photo download

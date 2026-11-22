@@ -24,9 +24,9 @@ export default function WatchFolderConsole() {
   const [logs, setLogs] = useState<string[]>([
     "[INIT] Universal Watch Folder Server initialized.",
     "[WATCHER] Root path: D:\\FindZora\\universal_folder",
-    "[WATCHER] Active event folders: 2 (ayesha_and_imran_wedding, mca_convocation_2026)",
+    "[WATCHER] Active event folders: 2 (wedding_event_1, mca_convocation_2026)",
     "[POLL] Listening for new JPG/PNG camera sync drops every 3s...",
-    "[DETECT] Ingested 'wedding_stage_01.jpg' in ayesha_and_imran_wedding/",
+    "[DETECT] Ingested 'wedding_stage_01.jpg' in wedding_event_1/",
     "[AI VISION] Detected 2 faces -> 6-point geometric landmark coordinates extracted.",
     "[EMBEDDING] Generated 512-D L2-normalized ArcFace vectors.",
     "[CLUSTERING] Matched face #1 to Person_101 (Arshad) -> Added 'wedding_stage_01.jpg'",
@@ -74,7 +74,7 @@ export default function WatchFolderConsole() {
   };
 
   const sampleJson = {
-    event_folder: "ayesha_and_imran_wedding",
+    event_folder: "wedding_event_1",
     last_updated: "2026-11-22T19:35:00Z",
     person_clusters: {
       "101": {
@@ -145,7 +145,7 @@ export default function WatchFolderConsole() {
           <span className="font-bold text-slate-800 text-base">
             {folderInfo?.events?.length || 2} Event Folders
           </span>
-          <span className="text-[11px] text-slate-400">ayesha_and_imran_wedding, mca_convocation_2026</span>
+          <span className="text-[11px] text-slate-400">wedding_event_1, mca_convocation_2026</span>
         </div>
 
         <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-1">

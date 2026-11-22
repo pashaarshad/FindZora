@@ -28,6 +28,8 @@ import cv2
 import numpy as np
 from backend.face_engine.detector import get_face_detector
 from backend.face_engine.recognizer import get_face_recognizer
+from backend.services.universal_sync import sync_universal_folder
+from backend.database.connection import SessionLocal
 
 UNIVERSAL_FOLDER_PATH = ROOT_DIR / "universal_folder"
 SUPPORTED_EXTS = {".jpg", ".jpeg", ".png", ".webp"}

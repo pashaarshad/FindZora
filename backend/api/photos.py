@@ -62,7 +62,9 @@ def stream_photo(photo_id: str, db: Session = Depends(get_db)):
     photo = db.query(Photo).filter(Photo.id == photo_id).first()
     if not photo or not Path(photo.file_path).exists():
         raise HTTPException(status_code=404, detail="Photo not found")
-    return FileResponse(photo.file_path)
+    suffix = Path(photo.file_path).suffix.lower()
+    media_type = "image/png" if suffix == ".png" else "image/jpeg"
+    return FileResponse(photo.file_path, media_type=media_type)
 
 @router.get("/api/photos/{photo_id}/faces")
 def get_detected_faces(photo_id: str, db: Session = Depends(get_db)):

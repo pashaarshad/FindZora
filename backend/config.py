@@ -21,7 +21,7 @@ DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
 
 # Face Recognition Settings
 EMBEDDING_DIM = 512
-SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", "0.55"))
+SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", "0.50"))
 MIN_FACE_SIZE = int(os.getenv("MIN_FACE_SIZE", "40"))  # min face width/height in px
 BLUR_THRESHOLD = float(os.getenv("BLUR_THRESHOLD", "35.0"))  # Laplacian variance threshold
 

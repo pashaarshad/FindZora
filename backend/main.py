@@ -39,6 +39,33 @@ app.include_router(search_router)
 app.include_router(universal_router)
 app.include_router(admin_router)
 
+import threading
+import time
+from backend.database.connection import SessionLocal
+from backend.services.universal_sync import sync_universal_folder
+
+def background_folder_watcher():
+    """Continuously checks universal_folder every 5s and syncs into DB/vector index."""
+    while True:
+        try:
+            db = SessionLocal()
+            sync_universal_folder(db)
+            db.close()
+        except Exception as e:
+            print(f"[Watcher Daemon] Notice: {e}")
+        time.sleep(5)
+
+@app.on_event("startup")
+def on_startup():
+    # Run initial synchronization
+    db = SessionLocal()
+    sync_universal_folder(db)
+    db.close()
+    # Start background watcher daemon thread
+    t = threading.Thread(target=background_folder_watcher, daemon=True)
+    t.start()
+    print("[FindZora API] Startup sync complete and Universal Folder watcher active.")
+
 @app.get("/")
 def root():
     return {

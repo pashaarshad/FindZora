@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <defs>
+    <linearGradient id="camGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Camera Body -->
+  <g transform="translate(10, 15)">
+    <!-- Camera Top Bar / Flash -->
+    <path d="M 28 15 L 38 4 L 56 4 L 66 15 Z" fill="#0369A1"/>
+    <circle cx="78" cy="10" r="4" fill="#38BDF8"/>
+    
+    <!-- Main Body Box -->
+    <rect x="6" y="14" width="82" height="66" rx="16" fill="url(#camGrad)"/>
+    
+    <!-- Inner Lens Ring -->
+    <circle cx="47" cy="47" r="24" fill="#FFFFFF" fill-opacity="0.15"/>
+    <circle cx="47" cy="47" r="20" fill="#0F172A"/>
+    
+    <!-- Magnifying Glass Discovery Lens -->
+    <circle cx="45" cy="45" r="13" stroke="url(#lensGrad)" stroke-width="4.5" fill="none"/>
+    <line x1="55" y1="55" x2="65" y2="65" stroke="url(#lensGrad)" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Lens Reflection Spot -->
+    <circle cx="41" cy="41" r="3" fill="#FFFFFF" fill-opacity="0.8"/>
+  </g>
+
+  <!-- Typography: FindZora -->
+  <text x="115" y="74" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#0F172A" letter-spacing="-1">Find<tspan fill="#0284C7">Zora</tspan></text>
+  
+  <!-- AI Biometric Badge -->
+  <rect x="365" y="38" width="46" height="24" rx="8" fill="#E0F2FE" stroke="#BAE6FD" stroke-width="1.5"/>
+  <text x="388" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#0369A1" text-anchor="middle">AI</text>
+
+  <!-- Subtitle Tagline -->
+  <text x="118" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B" letter-spacing="0.5">AI-Powered Event Photo Discovery Platform</text>
+</svg>

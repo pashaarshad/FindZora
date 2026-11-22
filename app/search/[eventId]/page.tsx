@@ -81,7 +81,7 @@ export default function AttendeeSearchPage() {
 
     const formData = new FormData();
     formData.append("selfie", selfieBlob, "selfie_capture.jpg");
-    formData.append("threshold", "0.55");
+    formData.append("threshold", "0.50");
     formData.append("top_k", "50");
 
     try {

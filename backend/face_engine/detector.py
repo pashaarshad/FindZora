@@ -8,7 +8,7 @@ from backend.face_engine.quality import assess_face_quality
 class DetectedFace:
     bbox: tuple[int, int, int, int]  # (x, y, w, h)
     face_crop: np.ndarray             # BGR image crop
-    aligned_crop: np.ndarray         # Normalized 112x112 crop
+    aligned_crop: np.ndarray         # Normalized crop
     is_usable: bool
     quality_score: float
     blur_score: float
@@ -16,36 +16,65 @@ class DetectedFace:
 
 class FaceDetector:
     def __init__(self):
-        # Load OpenCV Haar cascade frontal face model
+        # Primary cascade: frontal face default
         cascade_path = os.path.join(cv2.data.haarcascades, "haarcascade_frontalface_default.xml")
         self.cascade = cv2.CascadeClassifier(cascade_path)
-        if self.cascade.empty():
-            raise RuntimeError(f"Failed to load Haar Cascade from {cascade_path}")
+
+        # Fallback cascade: frontal face alt2 (better with glasses and slight angles)
+        alt_path = os.path.join(cv2.data.haarcascades, "haarcascade_frontalface_alt2.xml")
+        self.alt_cascade = cv2.CascadeClassifier(alt_path) if os.path.exists(alt_path) else None
 
     def detect_faces(self, image_bgr: np.ndarray, target_size=(112, 112)) -> list[DetectedFace]:
         """
         Detects multiple faces in an image, checks quality, and prepares normalized crops.
+        Uses primary cascade with multi-scale tuning and alt cascade fallback.
         """
         if image_bgr is None or image_bgr.size == 0:
             return []
 
         h, w = image_bgr.shape[:2]
         gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY)
-        # Contrast adjustment for better detection
-        gray = cv2.equalizeHist(gray)
+        gray_eq = cv2.equalizeHist(gray)
 
-        # Multi-scale face detection
+        # 1. Primary detection
         raw_faces = self.cascade.detectMultiScale(
-            gray,
-            scaleFactor=1.1,
-            minNeighbors=5,
+            gray_eq,
+            scaleFactor=1.08,
+            minNeighbors=4,
             minSize=(30, 30),
             flags=cv2.CASCADE_SCALE_IMAGE
         )
 
+        # 2. If no faces found, try alternate cascade
+        if len(raw_faces) == 0 and self.alt_cascade is not None:
+            raw_faces = self.alt_cascade.detectMultiScale(
+                gray,
+                scaleFactor=1.08,
+                minNeighbors=3,
+                minSize=(30, 30)
+            )
+
+        # 3. If still no faces found, check if image itself is already a tight face crop/portrait
+        if len(raw_faces) == 0:
+            # If aspect ratio is close to square or portrait, treat the central 80% as a face candidate
+            usable, q, b, reason = assess_face_quality(image_bgr)
+            if usable and w >= 50 and h >= 50:
+                aligned = cv2.resize(image_bgr, target_size, interpolation=cv2.INTER_AREA)
+                return [
+                    DetectedFace(
+                        bbox=(0, 0, w, h),
+                        face_crop=image_bgr,
+                        aligned_crop=aligned,
+                        is_usable=True,
+                        quality_score=q,
+                        blur_score=b,
+                        filter_reason="Full Portrait Crop"
+                    )
+                ]
+            return []
+
         detected_faces = []
         for (x, y, bw, bh) in raw_faces:
-            # Add small 10% context margin around face box
             pad_x = int(bw * 0.1)
             pad_y = int(bh * 0.1)
             x1 = max(0, x - pad_x)
@@ -58,8 +87,6 @@ class FaceDetector:
                 continue
 
             is_usable, quality_score, blur_score, reason = assess_face_quality(crop)
-
-            # Normalized aligned crop for embedding generator
             aligned = cv2.resize(crop, target_size, interpolation=cv2.INTER_AREA)
 
             detected_faces.append(
@@ -76,7 +103,6 @@ class FaceDetector:
 
         return detected_faces
 
-# Singleton instance
 _detector_instance = None
 
 def get_face_detector() -> FaceDetector:

@@ -75,7 +75,7 @@ export default function HomePage() {
 
     const formData = new FormData();
     formData.append("selfie", selfieBlob, "universal_query.jpg");
-    formData.append("threshold", "0.55");
+    formData.append("threshold", "0.50");
 
     try {
       const res = await fetch("/api/search/universal", {
@@ -89,45 +89,8 @@ export default function HomePage() {
       }
       setUniversalResults(data);
     } catch (err: any) {
-      console.warn("Universal search API returned error, showing demo grouped events:", err);
-      if (events.length > 0) {
-        setUniversalResults({
-          total_photos_matched: 6,
-          grouped_events: [
-            {
-              event_id: events[0].id,
-              event_name: events[0].name,
-              description: events[0].description,
-              organizer_name: events[0].organizer_name,
-              total_matches: 4,
-              photos: [
-                {
-                  photo_id: "demo_1",
-                  filename: "wedding_stage_01.jpg",
-                  similarity: 0.986,
-                  confidence_percentage: 98.6,
-                  image_url: "/images/findzora_workflow_infographic.jpg",
-                  width: 1920,
-                  height: 1080,
-                  created_at: new Date().toISOString()
-                },
-                {
-                  photo_id: "demo_2",
-                  filename: "family_portrait_03.jpg",
-                  similarity: 0.979,
-                  confidence_percentage: 97.9,
-                  image_url: "/images/findzora_workflow_infographic.jpg",
-                  width: 1920,
-                  height: 1080,
-                  created_at: new Date().toISOString()
-                }
-              ]
-            }
-          ]
-        });
-      } else {
-        setSearchError(err.message || "Failed to search across events.");
-      }
+      console.error("Universal search error:", err);
+      setSearchError(err.message || "Failed to search across events.");
     } finally {
       setIsSearching(false);
     }

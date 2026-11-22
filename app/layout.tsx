@@ -18,7 +18,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 pb-16">{children}</main>
         <footer className="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-          <p>© 2026 FindZora • Master of Computer Applications (MCA) Project • Prepared by Arshad Pasha</p>
+          <p>© 2026 FindZora • Master of Computer Applications (MCA) Project • Prepared by Mohammad Arsh</p>
           <p className="mt-1 text-slate-400">Strictly privacy-preserving • Ephemeral query processing • Event-isolated indexing</p>
         </footer>
       </body>
